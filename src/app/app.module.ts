@@ -3,22 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuLeftComponent } from './partials/menu-left/menu-left.component';
-import { MenuTopComponent } from './partials/menu-top/menu-top.component';
-import { DashboardComponent } from './pages/doctor/dashboard/dashboard.component';
+import { RouterModule, TitleStrategy } from '@angular/router';
+import { TemplatePageTitleStrategy } from './shared/utils/page-title-strategy';
+import { SharedModule } from './shared/shared.module';
+import { PageDefaultComponent } from './pages/page-default/page-default.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuLeftComponent,
-    MenuTopComponent,
-    DashboardComponent
+    PageDefaultComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    {provide: TitleStrategy, useClass: TemplatePageTitleStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
