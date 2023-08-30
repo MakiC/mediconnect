@@ -8,6 +8,7 @@ import { TemplatePageTitleStrategy } from './shared/utils/page-title-strategy';
 import { SharedModule } from './shared/shared.module';
 import { PageDefaultComponent } from './pages/page-default/page-default.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ApplicationService } from './shared/services/application.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
   ],
   providers: [
     {provide: TitleStrategy, useClass: TemplatePageTitleStrategy},
+    ApplicationService
   ],
   bootstrap: [AppComponent]
 })

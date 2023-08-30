@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApplicationService {
 
-  public leftMenuState = new BehaviorSubject<boolean>(false);
+  public sidebarCollapsed = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 }

@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DoctorRegisterComponent } from './pages/doctor-register/doctor-register.component';
 import { MenuLeftComponent } from './partials/menu-left/menu-left.component';
 import { MenuTopComponent } from './partials/menu-top/menu-top.component';
+import { PatientListComponent } from './pages/patient-list/patient-list.component';
+import { PatientEditComponent } from './pages/patient-edit/patient-edit.component';
 
 const routes: Routes = [
   { 
@@ -14,6 +16,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'patient/register', component: PatientEditComponent },
+      { path: 'patient/list', component: PatientListComponent },
       { path: 'doctor-register', component: DoctorRegisterComponent }
     ] 
   }  
@@ -24,7 +28,9 @@ const routes: Routes = [
     DashboardComponent,
     SecretaryIndexComponent,
     MenuLeftComponent,
-    MenuTopComponent
+    MenuTopComponent,
+    PatientListComponent,
+    PatientEditComponent
   ],
   imports: [
     RouterModule.forChild(routes),

@@ -6,55 +6,16 @@
           <!-- sidebar menu-->
           <ul class="sidebar-menu" data-widget="tree">
             <li class="treeview">
-              <a href="#">
-                <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-                <span>Dashboard</span>
-                <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
-                        </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="index.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Patients Dashboard</a></li>
-                <li><a href="index2.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Doctor Dashboard</a></li>
-                <li><a href="index3.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Hospital Dashboard</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="appointments.html">
-                <i class="icon-Barcode-read"><span class="path1"></span><span class="path2"></span></i>
-                <span>Appointments</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#">
+              <a href="javascript:" (click)="showPatientsSubmenu = !showPatientsSubmenu">
                 <i class="icon-Compiling"><span class="path1"></span><span class="path2"></span></i>
                 <span>Patients</span>
                 <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
-                        </span>
+                  <i class="fa fa-angle-right pull-right"></i>
+                </span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="patients.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Patients</a></li>
-                <li><a href="patient_details.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Patient Details</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="reports.html">
-                <i class="icon-Settings-1"><span class="path1"></span><span class="path2"></span></i>
-                <span>Reports</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="icon-Diagnostics"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
-                <span>Doctors</span>
-                <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
-                        </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="doctor_list.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Doctors</a></li>
-                <li><a href="doctors.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Doctor Details</a></li>
+              <ul class="treeview-menu" *ngIf="showPatientsSubmenu">
+                <li><a routerLink="patient/register"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Register patient</a></li>
+                <li><a routerLink="patient/list"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Search patient</a></li>
               </ul>
             </li>
           </ul>
